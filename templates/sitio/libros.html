@@ -1,27 +1,83 @@
 {% include "sitio/cabecera.html" %}
 
 
+<style>
+    .image_principal{
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            margin-top: 2%;
+        }
+  </style>
+  
+    <!--Imagen Principal de desarrollo -->
+  
+        <img src="/image/libros.jpg" class="d-block w-100 width:150%" alt="Fondo programing">
+      
+    <!--/.Imagen Principal de desarrollo-->
+  
+  
+     <div class="container">
+
 
     <div class="row">
         <!-- mediante un for se repite como blucle la creación del espacio de almacenamiento y se ingresan los datos almacenados en la BD -->
 
-        {% for libro in libros %}
-        <div class="col-md-3">
-            <div class="card">
-                <img width="40px" height="100px" class="card-img-top" src="/img/{{libro[2]}}" alt="Title">
-                <!-- las imagenes tienen un tratamiento especial, ya que se crean variables de almacenamiento en el mismo proyecto que se usan en img/ -->
-                <div class="card-body">
+
+       <div class="container center">
+        <br><br>
+       <div class="center">
+        <h1>Aquí encontraras todas las actividades</h1>
+       </div> 
+
+        
+        {% for libro in libro %}
+        <div class="container ">
+
+            <div class="datos_muestra"
+            
+                <div class="grado">
                     <h4 class="card-title">{{libro[1]}}</h4>
+                </div>
+
+                <div class="materia">
+                    <h4 class="card-title">{{libro[2]}}</h4>  
+                </div>
+
+                <div class="fecha">  
+                    <h4 class="card-title">{{libro[3]}}</h4>
+                </div><br>
+
+                <div class="actividad"> 
+                    <h1 class="card-title">{{libro[4]}}</h1> 
+                </div>
+
+                <div class="descripcion"> 
+                    <h4 class="card-title">{{libro[5]}}</h4> 
+                </div><br>
+
+                <div class="documento"> 
+                    <h4 class="card-title">{{libro[6]}}</h4> 
+                </div><br>
+
+                <img width="300px" height="300px" class="center" src="/img/{{libro[7]}}" alt="Title"><br>
+                <!-- las imagenes tienen un tratamiento especial, ya que se crean variables de almacenamiento en el mismo proyecto que se usan en img/ -->
+                <div class="comentario">
+                    <h4 class="card-title">{{libro[8]}}</h4>
                     <p class="card-text">
-                        <a name="" id="" class="btn btn-primary" href="{{libro[3]}}" role="button">Descargar</a>
+                        
                     </p>
                 </div>
             </div>
-            
-        </div>
+
+        </div>     
+        </div><br><br>
         {% endfor %}
 
+           
 
+        
+      </div>
     </div>
 
 

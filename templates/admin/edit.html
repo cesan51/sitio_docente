@@ -1,0 +1,117 @@
+{% include "admin/cabecera.html" %}
+<br><br>
+
+<div class=" container">
+    <div class="col-md-5">
+     <div class="card">
+        <div class="card-header">
+            Actualiza la Actividad
+        </div>
+    <div class="card-body">  
+
+<form action="/actualizar/{{info.0}}" method="post"  enctype="multipart/form-data">
+    <!--/{{info.0}}-->
+  
+    <div class="mb-3">
+    
+    <label for="grado" class="form-label">Grado</label>
+    <select id="grado" name="grado">
+        <option value="{{ info.1 }}">"{{ info.1 }}"</option>
+        <option value="601">Sexto 1</option>
+        <option value="602">Sexto 2</option>
+        <option value="603">Sexto 3</option>
+        <option value="604">Sexto 4</option>
+
+        <option value="701">Septimo 1</option>
+        <option value="702">Septimo 2</option>
+        <option value="703">Septimo 3</option>
+        <option value="704">Septimo 4</option>
+
+        <option value="801">Octavo 1</option>
+        <option value="802">Octavo 2</option>
+        <option value="803">Octavo 3</option>
+        <option value="804">Octavo 4</option>
+
+        <option value="901">Noveno 1</option>
+        <option value="902">Noveno 2</option>
+        <option value="903">Noveno 3</option>
+        <option value="904">Noveno 4</option>
+
+        <option value="1001">Decimo 1</option>
+        <option value="1002">Decimo 2</option>
+        <option value="1003">Decimo 3</option>
+        <option value="1004">Decimo 4</option>
+
+        <option value="1101">Undecimo 1</option>
+        <option value="1102">Undecimo 2</option>
+        <option value="1103">Undecimo 3</option>
+        <option value="1104">Undecimo 4</option>
+      </select>
+   </div>
+
+   <div class="mb-3">
+    
+    
+    <label for="materia" class="form-label">Materia</label>
+
+
+
+    <select id="materia" name="materia">
+      <option value="{{ info.2 }}">"{{ info.2 }}"</option>
+      <option  value="Matematicas">Matemáticas</option>
+      <option value="Español">Español</option>
+      <option value="Ciencias Naturales">Ciencias Naturales</option>
+      <option value="Ciencias Sociales">Ciencias Sociales</option>
+      <option value="Contabilidad">Contabilidad</option>
+      <option value="Filosofia">Filosofía</option>
+      <option value="Etica">Etica</option>
+      <option value="Emprendimiento">Emprendimiento</option>
+      <option value="EXTRAS">EXTRAS</option>
+
+  
+    </select>
+   </div>
+
+   <div class="mb-3">
+    <p>Fecha</p>
+    <input type="date" name="fecha" placeholder="" value="{{ info.3 }}">
+   </div>
+
+   <div class="mb-3">
+    <p>Actividad</p> 
+    <input type="text" name="actividad" placeholder="" value="{{ info.4 }}">
+  </div> 
+
+  <div class="mb-3">
+    <p>Descripcion</p> 
+    <input type="text" name="descripcion" placeholder="" value="{{ info.5 }}">
+   </div>
+
+  <div class="mb-3">
+    <p>Documento</p>
+    <input type="file" name="documento" placeholder="" value="{{ info.6 }}">
+ </div>
+
+  <div class="mb-3">
+    <p>Imagen</p>
+    <input type="file" name="imagen" placeholder="" value="{{ info.7 }}">
+   </div>
+
+  <div class="mb-3">
+    <p>Comentario</p>
+    <input type="text" name="comentario" placeholder="" value="{{ info.8 }}">
+  </div>
+    
+  <!--<input value="{{ info.0 }}"" type="text" name="{{ info.0 }}" id="{{ info.0 }}""> <!-- selecciona el id a eliminar -->
+  <button type="submit" class="btn btn-succes">enviar</button> 
+
+
+</form>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>

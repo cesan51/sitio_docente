@@ -16,22 +16,111 @@ y despues a la BD -->
     <div class="card-body">
         <form action="/admin/libros/guardar" method="post" enctype="multipart/form-data">
           <div class="mb-3">
-            <label for="txtNombre" class="form-label">Nombre</label>
-            <input type="text"
-              class="form-control" name="txtNombre" id="txtNombre" aria-describedby="helpId" placeholder="Escribe el nombre del libro">
+          <label for="grado" class="form-label">Grado</label>
+           <!--
+           <input type="text"
+           class="form-control" name="grado" id="grado" aria-describedby="helpId" placeholder="Escribe la Actividad">
+           </div>-->
+
+
+        
+            
+              <select id="grado" name="grado">
+                <option value="601">Sexto 1</option>
+                <option value="602">Sexto 2</option>
+                <option value="603">Sexto 3</option>
+                <option value="604">Sexto 4</option>
+
+                <option value="701">Septimo 1</option>
+                <option value="702">Septimo 2</option>
+                <option value="703">Septimo 3</option>
+                <option value="704">Septimo 4</option>
+
+                <option value="801">Octavo 1</option>
+                <option value="802">Octavo 2</option>
+                <option value="803">Octavo 3</option>
+                <option value="804">Octavo 4</option>
+
+                <option value="901">Noveno 1</option>
+                <option value="902">Noveno 2</option>
+                <option value="903">Noveno 3</option>
+                <option value="904">Noveno 4</option>
+
+                <option value="1001">Decimo 1</option>
+                <option value="1002">Decimo 2</option>
+                <option value="1003">Decimo 3</option>
+                <option value="1004">Decimo 4</option>
+
+                <option value="1101">Undecimo 1</option>
+                <option value="1102">Undecimo 2</option>
+                <option value="1103">Undecimo 3</option>
+                <option value="1104">Undecimo 4</option>
+              </select>
+              
           </div>
 
           <div class="mb-3">
-            <label for="txtImagen" class="form-label">Imagen</label>
+            <label for="materia" class="form-label">Materia</label>
+
+            <!--
+
+            <input type="text"
+            class="form-control" name="materia" id="materia" aria-describedby="helpId" placeholder="Escribe la Actividad">
+            </div>-->
+
+            <select id="materia" name="materia">
+              <option  value="Matematicas">Matemáticas</option>
+              <option value="Español">Español</option>
+              <option value="Ciencias Naturales">Ciencias Naturales</option>
+              <option value="Ciencias Sociales">Ciencias Sociales</option>
+              <option value="Contabilidad">Contabilidad</option>
+              <option value="Filosofia">Filosofía</option>
+              <option value="Etica">Etica</option>
+              <option value="Emprendimiento">Emprendimiento</option>
+              <option value="EXTRAS">EXTRAS</option>
+
+          
+            </select>
+            
+         </div>
+
+          <div class="mb-3">
+            <label for="fecha" class="form-label">Fecha</label>
+            <input type="date"
+              class="form-control" name="fecha" id="fecha" aria-describedby="helpId" placeholder="">
+          </div>
+
+
+          <div class="mb-3">
+            <label for="actividad" class="form-label">Actividad</label>
+            <input type="text"
+              class="form-control" name="actividad" id="actividad" aria-describedby="helpId" placeholder="Escribe la Actividad">
+          </div>
+
+          <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <input type="text"
+              class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder="Escribe la Descripción">
+          </div>
+
+          <div class="mb-3">
+            <label for="documento" class="form-label">Documento</label>
             <input type="file"
-              class="form-control" name="txtImagen" id="txtImagen" aria-describedby="helpId" placeholder="Seleccione la imagen">
+              class="form-control" name="documento" id="documento" aria-describedby="helpId" placeholder="Sube tu documento">
           </div>
 
           <div class="mb-3">
-            <label for="txtURL" class="form-label">URL Descarga</label>
-            <input type="text"
-              class="form-control" name="txtURL" id="txtURL" aria-describedby="helpId" placeholder="Escriba la URL de descarga">
+            <label for="imagen" class="form-label">Imagen</label>
+            <input type="file"
+              class="form-control" name="imagen" id="imagen" aria-describedby="helpId" placeholder="Sube tu imagen">
           </div>
+
+          <div class="mb-3">
+            <label for="comentario" class="form-label">Comentario</label>
+            <input type="text"
+              class="form-control" name="comentario" id="comentario" aria-describedby="helpId" placeholder="Comenta o da recomendaciones">
+          </div>
+
 
 
           <button type="submit" class="btn btn-primary">Agregar</button>
@@ -56,10 +145,14 @@ y despues a la BD -->
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Imagen</th>
-                        <th scope="col">URL</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col">GRADO</th>
+                        <th scope="col">MATERIA</th>
+                        <th scope="col">FECHA</th>
+                        <th scope="col">ACTIVIDAD</th>
+                        <th scope="col">DESCRIPCION</th>
+                        <th scope="col">DOCUMENTO</th>
+                        <th scope="col">IMAGEN</th>
+                        <th scope="col">COMENTARIO</th>
                     </tr>
                 </thead>
 
@@ -68,13 +161,40 @@ y despues a la BD -->
                     {% for libro in libros%}   <!-- bucle for de lectura de los datos -->
                     <tr class="">
                         <td>{{libro[0]}}</td>
+
                         <td>{{libro[1]}}</td>
+                        
+                        <td>{{libro[2]}}</td>
+                        
+                        <td>{{libro[3]}}</td>
+                        
+                        <td>{{libro[4]}}</td>
+                        
+                        <td>{{libro[5]}}</td>
+                        
                         <td>
-                            <img width="60px" src="/img/{{libro[2]}}" class="img-fluid rounded-top" alt="">
+                            <img width="60px" src="/img/{{libro[6]}}" class="img-fluid rounded-top" alt="">
                         </td>
+                        
                         <td>
-                            <a name="" id="" class="btn btn-primary" href="{{libro[3]}}" role="button">Enlace</a>
+                          <img width="60px" src="/img/{{libro[7]}}" class="img-fluid rounded-top" alt="">
                         </td>
+
+                        <td>{{libro[8]}}</td>
+
+
+                        <td>
+                          <form action="/admin/libros/edit" method="post">
+                              
+                              <input value="{{libro[0]}}" type="hidden" name="ID" id="ID"> <!-- selecciona el id a eliminar -->
+                                <button type="submit" class="btn btn-succes">Editar</button>   <!-- envio a la funcion eliminar de app.py -->
+
+
+                          </form>
+
+                        </td>
+
+
                         <td>
                             <form action="/admin/libros/borrar" method="post">
                                 
@@ -83,7 +203,6 @@ y despues a la BD -->
 
 
                             </form>
-
 
                         </td>
                     </tr>
